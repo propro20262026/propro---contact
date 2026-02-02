@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PRO PRO — Brand Stories, Creatively Engineered.</title>
+  <meta name="description" content="PRO PRO — Brand Stories, Creatively Engineered. Exhibition Design & Build, Event Technology Integration, Creative Brand Experiences." />
+  <style>
+    :root{--bg:#0b0f14;--card:#111826;--txt:#e8eef7;--muted:#a7b4c6;--accent:#ff3b30;--accent2:#ffd24a}
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial; background:radial-gradient(1200px 800px at 20% 0%, #1c2a44 0%, var(--bg) 50%); color:var(--txt)}
+    .wrap{min-height:100vh;display:grid;place-items:center;padding:28px}
+    .card{width:min(720px,100%);background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.10);border-radius:20px;box-shadow:0 12px 45px rgba(0,0,0,.45);padding:28px}
+    .brand{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .logo{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,var(--accent),#b400ff);display:grid;place-items:center;font-weight:800;letter-spacing:.5px}
+    h1{margin:0;font-size:28px;line-height:1.2}
+    .tag{margin:6px 0 0;color:var(--muted);font-size:14.5px}
+    .chips{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 22px}
+    .chip{padding:10px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);color:var(--txt);font-size:13.5px}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    @media (min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+    a.btn{display:flex;align-items:center;gap:10px;justify-content:center;text-decoration:none;color:var(--txt);padding:14px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);transition:.2s}
+    a.btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.25)}
+    a.primary{background:linear-gradient(135deg,var(--accent),#ff7a59);border:none}
+    a.secondary{background:linear-gradient(135deg,#1b6dff,#34d0ff);border:none}
+    a.gold{background:linear-gradient(135deg,var(--accent2),#ff8a00);border:none;color:#111}
+    .small{font-size:12.5px;color:var(--muted);margin-top:16px}
+    .small code{color:#fff;background:rgba(255,255,255,.08);padding:2px 6px;border-radius:8px}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card" role="region" aria-label="PRO PRO contact page">
+      <div class="brand">
+        <div class="logo">PP</div>
+        <div>
+          <h1>PRO PRO</h1>
+          <div class="tag">Brand Stories, Creatively Engineered.</div>
+        </div>
+      </div>
+      <div class="chips" aria-label="Services">
+        <div class="chip">Exhibition Design &amp; Build</div>
+        <div class="chip">Event Technology Integration</div>
+        <div class="chip">Creative Brand Experiences</div>
+      </div>
+      <div class="grid" aria-label="Quick actions">
+        <a class="btn primary" href="tel:+971547516623" aria-label="Call +971 54 751 6623">📞 Call: +971 54 751 6623</a>
+        <a class="btn secondary" href="mailto:Mirhaj@propro.ae" aria-label="Email Mirhaj@propro.ae">✉️ Email: Mirhaj@propro.ae</a>
+        <a class="btn gold" href="https://propro.ae/" target="_blank" rel="noopener" aria-label="Open website propro.ae">🌐 Visit: propro.ae</a>
+        <a class="btn" href="#" onclick="downloadVCard();return false;" aria-label="Download vCard">💾 Save Contact (vCard)</a>
+      </div>
+      <p class="small">
+        Tip: Publish this file to use it with a QR code. The call button works via <code>tel:+971547516623</code>.
+      </p>
+    </section>
+  </main>
+  <script>
+    function downloadVCard(){
+      const vcard = `BEGIN:VCARD
+VERSION:3.0
+N:;PRO PRO;;;
+FN:PRO PRO
+ORG:PRO PRO
+TITLE:Brand Stories, Creatively Engineered.
+TEL;TYPE=CELL:+971547516623
+EMAIL;TYPE=INTERNET:Mirhaj@propro.ae
+URL:https://propro.ae/
+NOTE:Services: Exhibition Design & Build; Event Technology Integration; Creative Brand Experiences
+END:VCARD`;
+      const blob = new Blob([vcard], {type: 'text/vcard'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'PROPRO.vcf';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
